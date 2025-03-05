@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Registration Form | CodingLab</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Title section -->
+      <div class="title">Registration</div>
+      <div class="content">
+        <!-- Registration form -->
+        <form id="bhwd_registation_form" action="#">
+          <div class="user-details">
+            <!-- Input for First Name -->
+            <div class="input-box">
+              <span class="details">First Name</span>
+              <input
+                class="bhwdFormFieldsData"
+                type="text"
+                name="frist-name"
+                placeholder="Enter your name"
+                required
+              />
+              <br />
+              <span class="bhwdErrText">First name is empty. </span>
+            </div>
+
+            <!-- Input for Last Name -->
+            <div class="input-box">
+              <span class="details">Last Name</span>
+              <input
+                class="bhwdFormFieldsData"
+                type="text"
+                name="last-name"
+                placeholder="Enter your name"
+                required
+              /><br />
+              <span class="bhwdErrText">Last name is empty. </span>
+            </div>
+            <!-- Input for Username -->
+            <div class="input-box">
+              <span class="details">Username</span>
+              <input
+                class="bhwdFormFieldsData"
+                type="username"
+                name="username"
+                placeholder="Enter your username"
+                required
+              /><br />
+              <!-- bhwdCheckValidateUserName -->
+              <span class="bhwdErrText">username is empty</span>
+            </div>
+
+            <!-- Input for Username -->
+            <div class="input-box">
+              <span class="details">Birthday</span>
+              <input
+                class="bhwdFormFieldsData"
+                type="date"
+                name="date"
+                placeholder="Enter your date"
+                required
+              />
+              <br />
+              <span class="bhwdErrText"> Birthday is empty. </span>
+            </div>
+
+            <!-- Input for Email -->
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input
+                class="bhwdFormFieldsData"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              /><br />
+              <span class="bhwdErrText"> Email is empty. </span>
+            </div>
+            <!-- Input for Phone Number -->
+            <div class="input-box">
+              <span class="details">Phone Number</span>
+              <input
+                class="bhwdFormFieldsData"
+                type="tel"
+                name="phone-number"
+                placeholder="Enter your number"
+                required
+              /><br />
+              <span class="bhwdErrText"> Phone number is empty. </span>
+            </div>
+
+            <!-- Input your codes -->
+            <div class="input-box">
+              <span class="details">-</span>
+              <button
+                type="button"
+                id="bhwdSendOtp"
+                placeholder="Send OTP"
+                value="Send OTP"
+                required
+              >
+                Send OTP
+              </button>
+            </div>
+            <!-- Input your codes -->
+            <div class="input-box">
+              <span class="details">Your OTP</span>
+              <input
+                class="bhwdFormFieldsData"
+                type="otp-code"
+                name="otp-code"
+                placeholder="Enter your OTP"
+                required
+              /><br />
+              <span class="bhwdErrText"> Not send code. </span>
+            </div>
+
+            <!-- Input for Password -->
+            <div class="input-box">
+              <span class="details"
+                >Password
+                <button
+                  class="bhwd-tooltip border-0 bg-transparent"
+                  type="button"
+                  data="password"
+                >
+                  <i class="fa-solid fa-circle-info"></i></button
+              ></span>
+              <input
+                class="bhwdFormFieldsData"
+                type="password"
+                type-data="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              /><br />
+              <span class="bhwdErrText"> Password is invalid. </span>
+            </div>
+            <!-- Input for Confirm Password -->
+            <div class="input-box">
+              <span class="details">Confirm Password </span>
+              <input
+                class="bhwdFormFieldsData"
+                type="password"
+                type-data="conf-password"
+                name="conf-password"
+                placeholder="Confirm your password"
+                required
+              /><br />
+              <span class="bhwdErrText"> Password field is empty. </span>
+            </div>
+          </div>
+          <div class="gender-details">
+            <!-- Radio buttons for gender selection -->
+            <input
+              type="radio"
+              checked
+              data-gender="Male"
+              name="gender"
+              id="dot-1"
+            />
+            <input
+              class="bhwdFormFieldsData"
+              type="radio"
+              data-gender="Female"
+              name="gender"
+              id="dot-2"
+            />
+            <input
+              class="bhwdFormFieldsData"
+              type="radio"
+              data-gender="Others"
+              name="gender"
+              id="dot-3"
+            />
+            <span class="bhwdFormFieldsData" class="gender-title">Gender</span>
+            <div class="category">
+              <!-- Label for Male -->
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Male</span>
+              </label>
+              <!-- Label for Female -->
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Female</span>
+              </label>
+              <!-- Label for Prefer not to say -->
+              <label for="dot-3">
+                <span class="dot three"></span>
+                <span class="gender">Prefer not to say</span>
+              </label>
+            </div>
+          </div>
+          <!-- Submit button -->
+          <div class="button">
+            <input
+              type="button"
+              id="bhwdFormDataSubmit"
+              data="submit"
+              value="Register"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
