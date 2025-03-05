@@ -176,14 +176,22 @@ jQuery(function ($) {
 
   _bhwdFuntons.otpIsValid = function () {
     let $otpCheck = $(".bhwdFormFieldsData").filter("[type='otp-code']");
-    let otpValidation = /^[A-Za-z0-9]$/;
+    let otpValidation = /^[A-Za-z0-9]{4,8}$/; // Allow 4 to 8 alphanumeric characters
     let _bhwdCheck = false;
-    console.log("Your OTP is:", $otpCheck.val());
-    if ($otpCheck.length > 3) {
-      _bhwdCheck = otpValidation.test($otpCheck.val());
-    } else {
-      _bhwdCheck = false;
+
+    if ($otpCheck.length === 0) {
       console.warn("OTP field not found.");
+      return false;
+    }
+
+    let otpValue = $otpCheck.val().trim();
+    console.log("Your OTP is:", otpValue);
+
+    if (otpValue.length >= 4 && otpValidation.test(otpValue)) {
+      _bhwdCheck = true;
+    } else {
+      console.warn("Invalid OTP format.");
+      _bhwdCheck = false;
     }
 
     return _bhwdCheck;
@@ -462,7 +470,8 @@ jQuery(function ($) {
       .on("click", function (e) {
         e.preventDefault(); // Prevent form submission if inside a form
         // alert(1);
-        _bhwdFuntons.otpIsValid();
+        console.log(_bhwdFuntons.otpIsValid());
+
         if (_bhwdFuntons.bhwdformFunction("bhwd_registation_form")) {
           let formData = $(".bhwdFormFieldsData")
             .map(function () {
